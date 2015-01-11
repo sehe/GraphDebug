@@ -8,9 +8,9 @@
 
 #include "Edge.h"
 
-inline double	Edge::GetCost() { return m_dCost; }
+double	Edge::GetCost() { return m_dCost; }
 
-inline int		Edge::GetIndexTo() { return m_nIndexTo; }
+int		Edge::GetIndexTo() { return m_nIndexTo; }
 
 Edge::~Edge()
 {
