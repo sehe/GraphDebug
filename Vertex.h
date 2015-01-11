@@ -30,40 +30,31 @@ template <typename T>
 class Vertex
 {
 private:
-    // Unique index given by the Graph
-    int m_nIndex;
-
-    // Cost until this vertex
-    double m_dCost;
-
-    // Id given by the user, not necessarily unique
-    std::string m_strId;
-
-    // Current color
-    Color m_currColor;
-
-    // Data being held
-    T m_tInfo;
-
-    // Edges that leave from this vertex
-    std::vector<Edge*> m_vEdges;
-
-    // Amount of edges pointing to this vertex
-    int m_nArrivedEdges;
-
-	// The index of the vertex the lead to this one through an edge in a certain path
-	int m_nPrevious;
-
-	// Interator used to get the adjacent vertex's unique index
-	int m_nIterator;
+    int m_nIndex;                // Unique index given by the Graph
+    std::string m_strId;         // Id given by the user, not necessarily unique
+    T m_tInfo;                   // Data being held
+    double m_dCost;              // Cost until this vertex
+    Color m_currColor;           // Current color
+    int m_nArrivedEdges;         // Amount of edges pointing to this vertex
+	int m_nPrevious;             // The index of the vertex the lead to this one through an edge in a certain path
+	int m_nIterator;             // Interator used to get the adjacent vertex's unique index
+    std::vector<Edge*> m_vEdges; // Edges that leave from this vertex
 
 	Vertex(const Vertex& v);
 	Vertex& operator=(const Vertex& v);
 
 public:
-
 	// Vertex constructor
-    Vertex(int nIndex, const T& tInfo, std::string id = "") : m_nIndex(nIndex), m_strId(id), m_tInfo(tInfo), m_dCost(std::numeric_limits<double>::max()), m_currColor(White), m_nArrivedEdges(0), m_nPrevious(-1), m_nIterator(0) {}
+    Vertex(int nIndex, const T& tInfo, std::string id = "") 
+        : m_nIndex(nIndex),
+        m_strId(id),
+        m_tInfo(tInfo),
+        m_dCost(std::numeric_limits<double>::max()),
+        m_currColor(White),
+        m_nArrivedEdges(0),
+        m_nPrevious(-1),
+        m_nIterator(0) 
+    { }
 
 	// Returns the unique index given by the graph
 	int    GetIndex();
