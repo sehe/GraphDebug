@@ -194,4 +194,10 @@ Vertex<T>::~Vertex()
 #endif
 }
 
+// FIXING ERRORS IN "GUESS" MODE
+template <typename T>
+bool operator==(std::pair<Vertex<T>*, double> const& p, Vertex<T> const* v) {
+    return p.first == v;
+}
+
 #endif /* defined(__Graph__Vertex__) */

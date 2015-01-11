@@ -187,7 +187,7 @@ bool Graph<T>::A_Star(int source, int destiny, double (* Heuristic)(const T& tFr
 			if(testIfItsOnOpenSet && vTempTo->GetColor() == Gray && dCost < vTempTo->GetCost())
 			{
 				vTempTo->SetColor(White);
-				std::vector< Vertex<T>*, double >::iterator it = std::find(minHeap.begin(), minHeap.end(), vTempTo);
+				typename std::vector< std::pair<Vertex<T>*, double > >::iterator it = std::find(minHeap.begin(), minHeap.end(), vTempTo);
 				minHeap.erase(it);
 				std::make_heap(minHeap.begin(), minHeap.end(), Compare);
 			}
