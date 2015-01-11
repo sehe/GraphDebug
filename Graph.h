@@ -182,7 +182,7 @@ bool Graph<T>::A_Star(int source, int destiny, double (* Heuristic)(const T& tFr
 		{
 			Vertex<T>* vTempTo = m_vVertexes[i];
 
-			double dCost = dCostFrom + vTempFrom->GetEdgeCost(vTempTo->GetIndex);
+			double dCost = dCostFrom + vTempFrom->GetEdgeCost(vTempTo->GetIndex());
 
 			if(testIfItsOnOpenSet && vTempTo->GetColor() == Gray && dCost < vTempTo->GetCost())
 			{
