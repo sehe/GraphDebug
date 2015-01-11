@@ -120,12 +120,12 @@ void Graph<T>::Init()
 
 	for(int i = 0; i < vSize; i++)
 	{
-		m_vVertexes[i]->SetCost(std::numeric_limits<double>::max())->SetPrevious(-1)->SetColor(White);
+		m_vVertexes[i]->SetCost(std::numeric_limits<double>::max()).SetPrevious(-1).SetColor(White);
 	}
 }
 
 template <typename T>
-static inline bool Graph<T>::Compare(std::pair< Vertex<T>*, double > pFrom, std::pair< Vertex<T>*, double > pTo)
+/*static*/ inline bool Graph<T>::Compare(std::pair< Vertex<T>*, double > pFrom, std::pair< Vertex<T>*, double > pTo)
 {
 	return pFrom.second >= pTo.second;
 }
